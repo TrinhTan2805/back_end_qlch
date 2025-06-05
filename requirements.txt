@@ -1,6 +1,22 @@
+@echo off
+
+cd /D:\Flutter\QuanLyTaiChinhCaNhan\backend_tinh_luong1
+REM Kích hoạt môi trường ảo
+call venv\Scripts\activate.bat
+
+REM Cài đặt thư viện cần thiết
+pip install -r requirements.txt
+
+REM Chạy FastAPI
+uvicorn main:app --host 0.0.0.0 --port 8000
+
+pause
+
+
 fastapi
 uvicorn[standard]
 sqlalchemy
 psycopg2-binary
 pydantic
 python-dotenv
+python-multipart
