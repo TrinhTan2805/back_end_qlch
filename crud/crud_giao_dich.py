@@ -1,3 +1,4 @@
+from sqlalchemy import desc
 from sqlalchemy.orm import Session
 
 from models import models_giao_dich
@@ -11,7 +12,7 @@ def create_giao_dich(db: Session, giao_dich: schemas_giao_dich.GiaoDichCreate):
     return db_item
 
 def get_giao_dichs(db: Session):
-    return db.query(models_giao_dich.GiaoDich).all()
+    return db.query(models_giao_dich.GiaoDich).order_by(desc(models_giao_dich.GiaoDich.ngay_nhap)).all()
 
 def get_giao_dich(db: Session, id: int):
     return db.query(models_giao_dich.GiaoDich).filter(models_giao_dich.GiaoDich._id == id).first()
