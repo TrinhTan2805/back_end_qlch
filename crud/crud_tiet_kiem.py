@@ -1,5 +1,4 @@
 from sqlalchemy.orm import Session
-
 from models import models_tiet_kiem
 from schemas import schemas_tiet_kiem
 

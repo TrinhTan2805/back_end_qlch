@@ -1,7 +1,6 @@
 from sqlalchemy.orm import Session
-
 from models import models_tong_hop
-from schemas import  schemas_tong_hop
+
 
 
 def get_tiet_kiems(db: Session):

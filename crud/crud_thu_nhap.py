@@ -1,5 +1,4 @@
 from sqlalchemy.orm import Session
-
 from models import models_thu_nhap
 from schemas import schemas_thu_nhap
 

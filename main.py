@@ -3,11 +3,13 @@ from database.database import engine
 from models.models_giao_dich import Base
 from models.models_thu_nhap import Base
 from models.models_tiet_kiem import Base
+from models.models_tong_hop import Base
+from models.models_danh_muc import Base
 from app.routers import router_giao_dich as giao_dich
 from app.routers import router_thu_nhap as thu_nhap
 from app.routers import router_tiet_kiem as tiet_kiem
 from app.routers import router_tong_hop as tong_hop
-from app.routers import router_danhmuc_nhom as danh_muc_nhom
+from app.routers import router_danh_muc as danh_muc
 
 
 
@@ -21,4 +23,4 @@ app.include_router(giao_dich.router)
 app.include_router(thu_nhap.router)
 app.include_router(tiet_kiem.router)
 app.include_router(tong_hop.router)
-app.include_router(danh_muc_nhom.router)
+app.include_router(danh_muc.router)
