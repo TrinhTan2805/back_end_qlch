@@ -8,7 +8,9 @@ DATABASE_URL = "postgresql://quanlychitieu_user:MfrzOGP5r1rpO1cRQrsQCw58rIb34fka
 engine = create_engine(DATABASE_URL, echo=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-
+def init_db():
+    from models import models_danh_muc  # import tất cả các models bạn có
+    Base.metadata.create_all(bind=engine) 
 def create_db():
     Base.metadata.create_all(bind=engine)
     print("Bảng đã được tạo hoặc đã tồn tại.")

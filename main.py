@@ -6,14 +6,19 @@ from app.routers import router_thu_nhap as thu_nhap
 from app.routers import router_tiet_kiem as tiet_kiem
 from app.routers import router_tong_hop as tong_hop
 from app.routers import router_danh_muc as danh_muc
+from database.database import init_db
 
 
 
 
 app = FastAPI()
 
+init_db()
+
 # Tạo bảng nếu chưa có
 Base.metadata.create_all(bind=engine)
+
+
 
 # Đăng ký router
 app.include_router(giao_dich.router)
