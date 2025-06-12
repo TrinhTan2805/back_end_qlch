@@ -6,9 +6,9 @@ class TongHopBase(BaseModel):
     id: int
     thang: int
     nam: int
-    tong_giao_dich: Optional[float] = 0.0
-    tong_thu_nhap: Optional[float] = 0.0
-    tong_tiet_kiem: Optional[float] = 0.0
+    tong_giao_dich: Optional[int] 
+    tong_thu_nhap: Optional[int] 
+    tong_tiet_kiem: Optional[int] 
 
 class TongHopCreate(TongHopBase):
     pass

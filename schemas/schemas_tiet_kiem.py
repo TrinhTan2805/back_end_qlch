@@ -7,7 +7,7 @@ class TietKiemBase(BaseModel):
     nhom: Optional[str] = None
     ghi_chu: Optional[str] = None
     ngay_nhap: Optional[datetime] = None
-    so_tien: Optional[float] = None
+    so_tien: Optional[int] = None
 
 class TietKiemCreate(TietKiemBase):
     pass

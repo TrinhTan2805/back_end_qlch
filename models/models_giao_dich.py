@@ -9,5 +9,5 @@ class GiaoDich(Base):
     nhom = Column(String)
     ghi_chu = Column(String)
     ngay_nhap = Column(TIMESTAMP)
-    so_tien = Column(Double)
+    so_tien = Column(Integer)
 
