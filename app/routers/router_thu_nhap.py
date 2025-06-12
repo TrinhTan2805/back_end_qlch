@@ -1,12 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-
 from crud import crud_thu_nhap
-
 from schemas import schemas_thu_nhap
 from database import database
 
-router = APIRouter(prefix="/thu_nhap", tags=["Thu nhap"])
+router = APIRouter(prefix="/thu_nhap", tags=["Thu_nhap"])
 
 def get_db():
     db = database.SessionLocal()

@@ -6,7 +6,7 @@ from crud import crud_giao_dich
 from schemas import schemas_giao_dich
 from database import database
 
-router = APIRouter(prefix="/giao_dich", tags=["Giao Dịch"])
+router = APIRouter(prefix="/giao_dich", tags=["Giao_dich"])
 
 def get_db():
     db = database.SessionLocal()

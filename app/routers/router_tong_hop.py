@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from database.database import SessionLocal
 from models.models_tong_hop import TongHopGiaoDichView
 
-router = APIRouter(prefix="/tong_hop", tags=["Tong hop"])
+router = APIRouter(prefix="/tong_hop", tags=["Tong_hop"])
 
 def get_db():
     db = SessionLocal()
