@@ -3,6 +3,7 @@ from datetime import datetime
 from typing import Optional
 
 class GiaoDichBase(BaseModel):
+    id: Optional[int] = None
     nhom: Optional[str] = None
     ghi_chu: Optional[str] = None
     ngay_nhap: Optional[datetime] = None
