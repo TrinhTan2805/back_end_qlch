@@ -14,10 +14,10 @@ def get_danh_mucs(db: Session):
     return db.query(models_danh_muc.DanhMuc).order_by(desc(models_danh_muc.DanhMuc.ngay_nhap)).all()
 
 def get_danh_muc(db: Session, id: int):
-    return db.query(models_danh_muc.DanhMuc).filter(models_danh_muc.DanhMuc._id == id).first()
+    return db.query(models_danh_muc.DanhMuc).filter(models_danh_muc.DanhMuc.id == id).first()
 
 def update_danh_muc(db: Session, id: int, danh_muc: schemas_danh_muc.DanhMucUpdate):
-    db_item = db.query(models_danh_muc.DanhMuc).filter(models_danh_muc.DanhMuc._id == id).first()
+    db_item = db.query(models_danh_muc.DanhMuc).filter(models_danh_muc.DanhMuc.id == id).first()
     if db_item:
         for key, value in danh_muc.dict(exclude_unset=True).items():
             setattr(db_item, key, value)
@@ -26,7 +26,7 @@ def update_danh_muc(db: Session, id: int, danh_muc: schemas_danh_muc.DanhMucUpda
     return db_item
 
 def delete_danh_muc(db: Session, id: int):
-    db_item = db.query(models_danh_muc.DanhMuc).filter(models_danh_muc.DanhMuc._id == id).first()
+    db_item = db.query(models_danh_muc.DanhMuc).filter(models_danh_muc.DanhMuc.id == id).first()
     if db_item:
         db.delete(db_item)
         db.commit()

@@ -16,7 +16,7 @@ class TietKiemUpdate(TietKiemBase):
     pass
 
 class TietKiemResponse(TietKiemBase):
-    _id: int
+    id: int = 0
 
     class Config:
         from_attributes = True

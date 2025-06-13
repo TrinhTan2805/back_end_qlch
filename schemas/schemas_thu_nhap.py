@@ -16,7 +16,7 @@ class ThuNhapUpdate(ThuNhapBase):
     pass
 
 class ThuNhapResponse(ThuNhapBase):
-    _id: int
+    id: int = 0
 
     class Config:
         from_attributes = True

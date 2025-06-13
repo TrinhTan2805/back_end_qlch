@@ -16,7 +16,7 @@ def get_giao_dichs(db: Session):
     return db.query(models_giao_dich.GiaoDich).order_by(desc(models_giao_dich.GiaoDich.ngay_nhap)).all()
 
 def get_giao_dich(db: Session, id: int):
-    return db.query(models_giao_dich.GiaoDich).filter(models_giao_dich.GiaoDich._id == id).first()
+    return db.query(models_giao_dich.GiaoDich).filter(models_giao_dich.GiaoDich.id == id).first()
 
 def update_giao_dich(db: Session, id: int, giao_dich: schemas_giao_dich.GiaoDichUpdate):
     # 1. Tìm giao dịch theo ID
@@ -53,7 +53,7 @@ def update_giao_dich(db: Session, id: int, giao_dich: schemas_giao_dich.GiaoDich
     return db_item
 
 def delete_giao_dich(db: Session, id: int):
-    db_item = db.query(models_giao_dich.GiaoDich).filter(models_giao_dich.GiaoDich._id == id).first()
+    db_item = db.query(models_giao_dich.GiaoDich).filter(models_giao_dich.GiaoDich.id == id).first()
     if not db_item:
         return None
     try:

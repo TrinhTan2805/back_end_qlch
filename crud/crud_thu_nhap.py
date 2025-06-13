@@ -13,10 +13,10 @@ def get_thu_nhaps(db: Session):
     return db.query(models_thu_nhap.ThuNhap).all()
 
 def get_thu_nhap(db: Session, id: int):
-    return db.query(models_thu_nhap.ThuNhap).filter(models_thu_nhap.ThuNhap._id == id).first()
+    return db.query(models_thu_nhap.ThuNhap).filter(models_thu_nhap.ThuNhap.id == id).first()
 
 def update_thu_nhap(db: Session, id: int, thu_nhap: schemas_thu_nhap.ThuNhapUpdate):
-    db_item = db.query(models_thu_nhap.ThuNhap).filter(models_thu_nhap.ThuNhap._id == id).first()
+    db_item = db.query(models_thu_nhap.ThuNhap).filter(models_thu_nhap.ThuNhap.id == id).first()
     if db_item:
         for key, value in thu_nhap.dict(exclude_unset=True).items():
             setattr(db_item, key, value)
@@ -25,7 +25,7 @@ def update_thu_nhap(db: Session, id: int, thu_nhap: schemas_thu_nhap.ThuNhapUpda
     return db_item
 
 def delete_thu_nhap(db: Session, id: int):
-    db_item = db.query(models_thu_nhap.ThuNhap).filter(models_thu_nhap.ThuNhap._id == id).first()
+    db_item = db.query(models_thu_nhap.ThuNhap).filter(models_thu_nhap.ThuNhap.id == id).first()
     if db_item:
         db.delete(db_item)
         db.commit()

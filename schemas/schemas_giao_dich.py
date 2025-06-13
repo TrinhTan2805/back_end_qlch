@@ -16,7 +16,7 @@ class GiaoDichUpdate(GiaoDichBase):
     pass
 
 class GiaoDichResponse(GiaoDichBase):
-    _id: int
+    id: int = 0
 
     class Config:
         from_attributes = True

@@ -13,10 +13,10 @@ def get_tiet_kiems(db: Session):
     return db.query(models_tiet_kiem.TietKiem).all()
 
 def get_tiet_kiem(db: Session, id: int):
-    return db.query(models_tiet_kiem.TietKiem).filter(models_tiet_kiem.TietKiem._id == id).first()
+    return db.query(models_tiet_kiem.TietKiem).filter(models_tiet_kiem.TietKiem.id == id).first()
 
 def update_tiet_kiem(db: Session, id: int, tiet_kiem: schemas_tiet_kiem.TietKiemUpdate):
-    db_item = db.query(models_tiet_kiem.TietKiem).filter(models_tiet_kiem.TietKiem._id == id).first()
+    db_item = db.query(models_tiet_kiem.TietKiem).filter(models_tiet_kiem.TietKiem.id == id).first()
     if db_item:
         for key, value in tiet_kiem.dict(exclude_unset=True).items():
             setattr(db_item, key, value)
@@ -25,7 +25,7 @@ def update_tiet_kiem(db: Session, id: int, tiet_kiem: schemas_tiet_kiem.TietKiem
     return db_item
 
 def delete_tiet_kiem(db: Session, id: int):
-    db_item = db.query(models_tiet_kiem.TietKiem).filter(models_tiet_kiem.TietKiem._id == id).first()
+    db_item = db.query(models_tiet_kiem.TietKiem).filter(models_tiet_kiem.TietKiem.id == id).first()
     if db_item:
         db.delete(db_item)
         db.commit()
