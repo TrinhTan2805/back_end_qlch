@@ -12,6 +12,9 @@ from database.database import init_db
 
 
 app = FastAPI()
+@app.get("/")
+def read_root():
+    return {"message": "Chào mừng đến với API Quản lý Giao dịch"}
 
 init_db()
 
