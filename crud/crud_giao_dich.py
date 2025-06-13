@@ -54,7 +54,13 @@ def update_giao_dich(db: Session, id: int, giao_dich: schemas_giao_dich.GiaoDich
 
 def delete_giao_dich(db: Session, id: int):
     db_item = db.query(models_giao_dich.GiaoDich).filter(models_giao_dich.GiaoDich._id == id).first()
-    if db_item:
+    if not db_item:
+        return None
+    try:
         db.delete(db_item)
         db.commit()
-    return db_item
+        return db_item
+    except Exception as e:
+        db.rollback()
+        raise e  # để FastAPI xử lý hoặc bạn có thể raise HTTPException rõ ràng hơn
+

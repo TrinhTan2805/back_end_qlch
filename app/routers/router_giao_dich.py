@@ -39,7 +39,11 @@ def update(id: int, giao_dich: schemas_giao_dich.GiaoDichUpdate, db: Session = D
 
 @router.delete("/{id}")
 def delete(id: int, db: Session = Depends(get_db)):
-    db_item = crud_giao_dich.delete_giao_dich(db, id)
-    if db_item is None:
-        raise HTTPException(status_code=404, detail="Không tìm thấy giao dịch")
-    return {"message": "Xóa thành công"}
+    try:
+        db_item = crud_giao_dich.delete_giao_dich(db, id)
+        if db_item is None:
+            raise HTTPException(status_code=404, detail="Không tìm thấy giao dịch")
+        return {"message": "Xóa thành công"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Lỗi server khi xóa: {str(e)}")
+
