@@ -4,6 +4,7 @@
     ],
     "cSpell.words": [
         "autoflush",
+        "Chào",
         "chưa",
         "Chuẩn",
         "chuỗi",
@@ -17,9 +18,11 @@
         "dịch",
         "dichs",
         "Định",
+        "dotenv",
         "dùng",
         "đúng",
         "được",
+        "fastapi",
         "giao",
         "hoặc",
         "không",
@@ -28,6 +31,7 @@
         "liệu",
         "Mfrz",
         "mucs",
+        "mừng",
         "ngay",
         "ngày",
         "nhap",
@@ -35,8 +39,13 @@
         "nhật",
         "nhom",
         "nhóm",
+        "psycopg",
+        "pydantic",
+        "Quản",
+        "ràng",
         "schmas",
         "sessionmaker",
+        "sqlalchemy",
         "thang",
         "tháng",
         "thành",
@@ -46,6 +55,7 @@
         "tien",
         "tiet",
         "tính",
-        "toumcj"
+        "toumcj",
+        "uvicorn"
     ]
 }
