@@ -7,6 +7,7 @@ from app.routers import router_tiet_kiem as tiet_kiem
 from app.routers import router_tong_hop as tong_hop
 from app.routers import router_danh_muc as danh_muc
 from app.routers import router_dau_tu as dau_tu
+from app.routers import router_tien_no as tien_no
 from database.database import init_db
 
 
@@ -15,7 +16,7 @@ from database.database import init_db
 app = FastAPI()
 @app.get("/")
 def read_root():
-    return {"message": "Chào mừng đến với API Quản lý Giao dịch"}
+    return {"message": "Chào mừng đến với API Quản lý tài chính cá nhân"}
 
 init_db()
 
@@ -31,3 +32,4 @@ app.include_router(tiet_kiem.router)
 app.include_router(tong_hop.router)
 app.include_router(danh_muc.router)
 app.include_router(dau_tu.router)
+app.include_router(tien_no.router)
