@@ -8,6 +8,7 @@ from app.routers import router_tong_hop as tong_hop
 from app.routers import router_danh_muc as danh_muc
 from app.routers import router_dau_tu as dau_tu
 from app.routers import router_tien_no as tien_no
+from app.routers import router_tra_no as tra_no
 from database.database import init_db
 
 
@@ -33,3 +34,4 @@ app.include_router(tong_hop.router)
 app.include_router(danh_muc.router)
 app.include_router(dau_tu.router)
 app.include_router(tien_no.router)
+app.include_router(tra_no.router)
