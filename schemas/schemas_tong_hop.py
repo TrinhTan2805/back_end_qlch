@@ -8,7 +8,11 @@ class TongHopBase(BaseModel):
     nam: int
     tong_giao_dich: Optional[int] 
     tong_thu_nhap: Optional[int] 
-    tong_tiet_kiem: Optional[int] 
+    tong_tiet_kiem: Optional[int]
+    tong_dau_tu: Optional[int] 
+    tong_no: Optional[int]
+    tong_tra_no: Optional[int]
+
 
 class TongHopCreate(TongHopBase):
     pass

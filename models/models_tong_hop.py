@@ -13,3 +13,7 @@ class TongHopGiaoDichView(Base):
     tong_giao_dich = Column(Integer)
     tong_thu_nhap = Column(Integer)
     tong_tiet_kiem = Column(Integer)
+    tong_dau_tu = Column(Integer)
+    tong_no = Column(Integer)
+    tong_tra_no = Column(Integer)
+   
