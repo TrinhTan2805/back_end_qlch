@@ -2,19 +2,16 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-from models.models_giao_dich import Base
+DATABASE_URL = "oracle+oracledb://myuser:mypassword@localhost:1521/?service_name=XEPDB1"
 
-# DATABASE_URL = "postgresql://postgres:1@localhost/postgres"
-DATABASE_URL = "postgresql://quanlychitieu_user:MfrzOGP5r1rpO1cRQrsQCw58rIb34fka@dpg-d115toumcj7s739smp30-a.singapore-postgres.render.com/quanlychitieu"
 engine = create_engine(DATABASE_URL, echo=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-def init_db():
-    from models import models_danh_muc  # import tất cả các models bạn có
-    Base.metadata.create_all(bind=engine) 
-def create_db():
-    Base.metadata.create_all(bind=engine)
-    print("Bảng đã được tạo hoặc đã tồn tại.")
+# Một Base duy nhất
+Base = declarative_base()
 
-if __name__ == "__main__":
-    create_db()
+def init_db():
+    # Import tất cả models để chúng đăng ký vào Base
+    from models import bangthemmoi_dautu
+    
+    Base.metadata.create_all(bind=engine)

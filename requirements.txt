@@ -5,3 +5,8 @@ psycopg2-binary
 pydantic
 python-dotenv
 python-multipart
+fastapi
+uvicorn
+sqlalchemy
+cx_Oracle  # Hoặc oracledb nếu dùng driver mới hơn
+oracledb
